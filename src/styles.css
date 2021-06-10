@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.icon__custom{
+    font-size: 26px;
+    transition: all .4s;
+}
+
+.icon__custom:hover, .active{
+    color: #FFF !important;
+}
+
+.link{
+    color: rgb(155, 183, 245);
+    transition: all .4s;
+}
+
+.link:hover{
+    color: #FFF;
+}
+
+.sidenav{
+    width: 200px;
+    background-color: #3F51B5
+}

@@ -1,0 +1,86 @@
+<p>
+  <mat-toolbar color="primary">
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+      (click)="sidenav.toggle()"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span> Correos App </span>
+    <span class="example-spacer"></span>
+    <mat-icon> send</mat-icon>
+  </mat-toolbar>
+</p>
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav
+    #sidenav
+    mode="side"
+    class="sidenav"
+    [fixedInViewport]="options.value.fixed"
+    [fixedTopGap]="options.value.top"
+    [fixedBottomGap]="options.value.bottom"
+  >
+    <mat-list>
+      <mat-list-item>
+        <button
+          mat-icon-button
+          routerLinkActive="active"
+          class="link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLink="/home"
+          (click)="sidenav.toggle()"
+        >
+          <i class="uil uil-estate icon__custom"></i>
+          Inicio
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button
+          mat-icon-button
+          routerLinkActive="active"
+          class="link"
+          routerLink="/send"
+          (click)="sidenav.toggle()"
+        >
+          <i class="uil uil-envelope-edit icon__custom"></i>
+          Enviar email
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button
+          mat-icon-button
+          routerLink="/emails"
+          class="link"
+          routerLinkActive="active"
+          (click)="sidenav.toggle()"
+        >
+          <i class="uil uil-envelope-open icon__custom"></i>
+          Email enviados
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button
+          mat-icon-button
+          routerLink="/emails"
+          class="link"
+          routerLinkActive="active"
+          (click)="sidenav.toggle()"
+        >
+        <i class="uil uil-info-circle icon__custom"></i>
+          Acerca de
+        </button>
+      </mat-list-item>
+
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
