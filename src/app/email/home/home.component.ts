@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,11 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor() { }
+  constructor(private route:Router){}
 
-  ngOnInit(): void {
+send(){
+  this.route.navigateByUrl('/send');
+}
+
+getAll(){
+  this.route.navigateByUrl('/emails')
+}
+
+about(){
+    console.log('about');
+    
   }
+  
+
+
 
 }

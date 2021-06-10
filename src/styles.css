@@ -1,33 +1,115 @@
 /* You can add global styles to this file, and also import other style files */
-*{
-    margin: 0;
+* {
+  margin: 0;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                     NAV                                    */
+/* -------------------------------------------------------------------------- */
 .example-spacer {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
-.icon__custom{
-    font-size: 26px;
-    transition: all .4s;
+.icon__custom {
+  font-size: 26px;
+  transition: all .4s;
 }
 
-.icon__custom:hover, .active{
-    color: #FFF !important;
+.icon__custom:hover,
+.active {
+  color: #FFF !important;
 }
 
-.link{
-    color: rgb(155, 183, 245);
-    transition: all .4s;
+.link {
+  color: rgb(155, 183, 245);
+  transition: all .4s;
 }
 
-.link:hover{
-    color: #FFF;
+.link:hover {
+  color: #FFF !important;
 }
 
-.sidenav{
-    width: 200px;
-    background-color: #3F51B5
+.sidenav {
+  width: 200px;
+  background-color: #3F51B5
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    HOME                                    */
+/* -------------------------------------------------------------------------- */
+mat-sidenav-content {
+    background-color: #f3f3f9;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%234252ce' fill-opacity='0.1'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+
+mat-card {
+  margin-top: 3rem;
+  margin-bottom: 1.6rem;
+  cursor: pointer;
+  background: rgba(241, 238, 238, 0.808) !important;
+  text-align: center;
+  transition: ease-in-out .4s !important;
+}
+
+mat-card:hover {
+  box-shadow: 1px 1px 4px rgba(0, 38, 255, 0.425) !important;
+}
+
+.send {
+  border-left: 3px solid green;
+}
+
+.send i {
+  color: green;
+}
+
+.last {
+  border-left: 3px solid red;
+}
+
+.last i {
+  color: red;
+}
+
+.about {
+  border-left: 3px solid #3F51B5;
+}
+
+.about i {
+  color: #3F51B5;
+}
+
+
+
+.icon__card {
+  font-size: 35px;
+}
+
+@media screen and (min-width:550px){
+    .container{
+        width: 95%;
+    }
+    
+    mat-card{
+        width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

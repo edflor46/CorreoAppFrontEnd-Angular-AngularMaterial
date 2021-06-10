@@ -6,6 +6,7 @@ import { SendComponent } from './send/send.component';
 import { GetAllComponent } from './get-all/get-all.component';
 import { GetEmailComponent } from './get-email/get-email.component';
 import { HomeComponent } from './home/home.component';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     CommonModule,
-    EmailRoutingModule
+    EmailRoutingModule,
+    MaterialModule
   ]
 })
 export class EmailModule { }
