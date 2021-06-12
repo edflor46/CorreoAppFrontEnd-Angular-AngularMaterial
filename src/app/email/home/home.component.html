@@ -1,40 +1,39 @@
 <div class="container">
-    <div class="content">
-  <mat-card (click)="send()" class="send">
-    <mat-card-header>
-      <mat-card-title>Enviar un correo</mat-card-title>
-    </mat-card-header>
-    <i class="uil uil-message icon__card"></i>
-    <mat-card-content>
-      <p>
-        Envía correos electrónicos mediante correosApp, solo necesitas un
-        destinatario, asunto, mensaje y listo.
-      </p>
-    </mat-card-content>
-  </mat-card>
+  <div class="content">
+    <mat-card (click)="send()" class="send">
+      <mat-card-header>
+        <mat-card-title>Enviar un correo</mat-card-title>
+      </mat-card-header>
+      <i class="uil uil-message icon__card"></i>
+      <mat-card-content>
+        <p>
+          Envía correos electrónicos mediante correosApp, solo necesitas un
+          destinatario, asunto, mensaje y listo.
+        </p>
+      </mat-card-content>
+    </mat-card>
 
-  <mat-card (click)="getAll()" class="last">
-    <mat-card-header>
-      <mat-card-title>Correos enviados</mat-card-title>
-    </mat-card-header>
-    <i class="uil uil-envelope-open icon__card"></i>
-    <mat-card-content>
-      <p>
-        Mira los últimos correos que han sido enviados, si aún no hay correos, envía uno.
-      </p>
-    </mat-card-content>
-  </mat-card>
+    <mat-card (click)="getAll()" class="last">
+      <mat-card-header>
+        <mat-card-title>Correos enviados</mat-card-title>
+      </mat-card-header>
+      <i class="uil uil-envelope-open icon__card"></i>
+      <mat-card-content>
+        <p>
+          Mira los últimos correos que han sido enviados, si aún no hay correos,
+          envía uno.
+        </p>
+      </mat-card-content>
+    </mat-card>
 
-  <mat-card (click)="about()" class="about">
-    <mat-card-header>
-      <mat-card-title>Acerca de</mat-card-title>
-    </mat-card-header>
-    <i class="uil uil-info icon__card"></i>
-    <mat-card-content>
-      <p>
-        Más información de la aplicación web
-      </p>
-    </mat-card-content>
-  </mat-card>
-</div>
+    <mat-card (click)="about()" class="about">
+      <mat-card-header>
+        <mat-card-title>Acerca de</mat-card-title>
+      </mat-card-header>
+      <i class="uil uil-info icon__card"></i>
+      <mat-card-content>
+        <p>Más información de la aplicación web</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>

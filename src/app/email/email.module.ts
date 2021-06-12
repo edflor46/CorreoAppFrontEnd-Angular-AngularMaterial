@@ -7,6 +7,8 @@ import { GetAllComponent } from './get-all/get-all.component';
 import { GetEmailComponent } from './get-email/get-email.component';
 import { HomeComponent } from './home/home.component';
 import { MaterialModule } from '../material/material.module';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { MaterialModule } from '../material/material.module';
   imports: [
     CommonModule,
     EmailRoutingModule,
-    MaterialModule
+    MaterialModule,
+    NgxPaginationModule
   ]
 })
 export class EmailModule { }
