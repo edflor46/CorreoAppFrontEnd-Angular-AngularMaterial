@@ -125,6 +125,12 @@ mat-card:hover {
   }
 }
 
+@media screen and (min-width:1024px){
+  .container{
+    width: 60%;
+  }
+}
+
 
 /* -------------------------------------------------------------------------- */
 /*                                 PAGINATION                                 */
@@ -160,3 +166,51 @@ mat-card:hover {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* -------------------------------------------------------------------------- */
+/*                                    MAIL                                    */
+/* -------------------------------------------------------------------------- */
+
+.back i{
+  color: #3F51B5;
+  font-size: 30px;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  transition: ease-in-out .4s;
+}
+
+.back i:hover{
+  transform: scale(1, 1);
+  color: #c4c8e4;
+}
+
+.content__mail{
+  height: 100vh;
+}
+
+@media screen and (min-width:450px){
+  .content__mail{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+  }
+}
+
+.mensaje{
+  margin-top: 15px;
+}
+
+.mensaje strong{
+  font-size: 20px;
+}
+
+.footer__mail{
+  text-align: center;
+  position: relative;
+  bottom: -300px;
+ 
+  color: rgb(124, 124, 124);
+}
+

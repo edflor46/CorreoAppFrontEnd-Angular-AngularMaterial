@@ -1,1 +1,50 @@
-<p>get-email works!</p>
+<div class="back" (click)="back()">
+    <i class="uil uil-left-arrow-from-left"></i>
+</div>
+
+<div class="container">
+  <h1 class="title">{{mail?.asunto}}</h1>
+  <div class="content__mail">
+    <div class="destinatario">
+      <span>
+        <strong>Destinatario: </strong>
+        <small>{{mail?.destinatario}}</small>
+      </span>
+    </div>
+
+    <div class="nombre">
+      <span>
+        <strong>Enviado por: </strong>
+        <small>{{mail?.nombre}}</small>
+      </span>
+    </div>
+    <div class="fecha">
+      <span>
+        <strong>Enviado el: </strong>
+        <small>{{mail?.fecha | date}}</small>
+      </span>
+    </div>
+
+    <div class="asunto">
+      <span>
+        <strong>Asunto: </strong>
+        <small
+          >{{mail?.asunto}}</small
+        >
+      </span>
+    </div>
+
+    <div class="mensaje">
+      <span>
+        <strong>Mensaje: </strong>
+        <small
+          >{{mail?.msg}}</small
+        >
+      </span>
+    </div>
+    <div class="footer__mail">
+        <span>Correos App Powered by <small>Eduardo Flores</small></span>
+    </div>
+  </div>
+
+</div>

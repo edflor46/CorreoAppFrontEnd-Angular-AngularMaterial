@@ -6,6 +6,7 @@ export interface Emails {
 export interface Correo {
     _id:          string;
     destinatario: string;
+    asunto:       string;
     nombre:       string;
     msg:          string;
     fecha:        Date;
