@@ -1,16 +1,45 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ServiceService } from '../services/service.service';
+import { PatternService } from '../services/pattern.service';
 
 @Component({
   selector: 'app-send',
   templateUrl: './send.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class SendComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  /*==========FORM GROUP===========*/
+  sendCorreo: FormGroup;
+  constructor(
+    private fb: FormBuilder,
+    private correoService: ServiceService,
+    private pattern: PatternService
+  ) {
+    /*==========VALIDACIONES==========*/
+    this.sendCorreo = this.fb.group({
+      destinatario : [''.trim(), [Validators.required, Validators.pattern(this.pattern.destinatario)]],
+      asunto       : [''.trim(), [Validators.required, Validators.minLength(4), Validators.pattern(this.pattern.asunto)]],
+      nombre       : [''.trim(), [Validators.required, Validators.minLength(4), Validators.pattern(this.pattern.nombre)]],
+      mensaje      : [''.trim(), [Validators.required, Validators.minLength(4)]],
+    });
   }
 
+  ngOnInit(): void {}
+
+
+  /* -------------------------------------------------------------------------- */
+  /*                                   ERRORES                                  */
+  /* -------------------------------------------------------------------------- */
+
+  errorInput(input:string){
+    return this.sendCorreo.get(input).invalid && this.sendCorreo.get(input).touched;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*                                 SEND CORREO                                */
+  /* -------------------------------------------------------------------------- */
+  enviar() {
+    console.log('Enviado');
+  }
 }

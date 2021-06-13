@@ -1,1 +1,64 @@
-<p>send works!</p>
+<div class="container">
+  <h1 class="title">Enviar correo</h1>
+  <div class="content__send">
+    <form [formGroup]="sendCorreo" autocomplete="off" (ngSubmit)="enviar()">
+      <div class="destinatario">
+        <mat-form-field appearance="outline">
+          <mat-label>Destinatario</mat-label>
+          <input
+            type="email"
+            formControlName="destinatario"
+            matInput
+            placeholder="Example@dominio.com"
+          />
+          <mat-error *ngIf="errorInput('destinatario')"
+            >Ingrese un correo valido</mat-error
+          >
+        </mat-form-field>
+      </div>
+
+      <div class="asunto">
+        <mat-form-field appearance="outline">
+          <mat-label>Asunto</mat-label>
+          <input
+            type="text"
+            formControlName="asunto"
+            matInput
+            placeholder="Ingrese un asunto"
+          />
+          <mat-error *ngIf="errorInput('asunto')"
+            >El asunto debe tener al menos 4 caracteres</mat-error
+          >
+        </mat-form-field>
+      </div>
+
+      <div class="nombre">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input
+            type="text"
+            formControlName="nombre"
+            matInput
+            placeholder="Ingrese su nombre"
+          />
+          <mat-error *ngIf="errorInput('nombre')"
+            >El nombre debe tener al menos 4 caracteres</mat-error
+          >
+        </mat-form-field>
+      </div>
+
+      <div class="mensaje">
+        <mat-form-field appearance="outline">
+          <mat-label>Mensaje</mat-label>
+          <textarea formControlName="mensaje" matInput rows="8"></textarea>
+          <mat-error *ngIf="errorInput('mensaje')"
+            >El mensaje debe contener al menos 4 caracteres</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <button type="submit" mat-raised-button color="primary" [disabled]="sendCorreo.invalid">
+        Enviar <i class="uil uil-message"></i>
+      </button>
+    </form>
+  </div>
+</div>

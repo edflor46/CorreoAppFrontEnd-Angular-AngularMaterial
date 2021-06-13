@@ -8,6 +8,8 @@ import { GetEmailComponent } from './get-email/get-email.component';
 import { HomeComponent } from './home/home.component';
 import { MaterialModule } from '../material/material.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -22,7 +24,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CommonModule,
     EmailRoutingModule,
     MaterialModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class EmailModule { }

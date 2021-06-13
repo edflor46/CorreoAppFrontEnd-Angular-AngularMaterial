@@ -214,3 +214,20 @@ mat-card:hover {
   color: rgb(124, 124, 124);
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                    SEND                                    */
+/* -------------------------------------------------------------------------- */
+
+.content__send{
+  height: 100vh;
+  text-align: center;
+  display: block;
+}
+
+.mat-form-field-infix{
+  width: 300px !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+  margin: 0em 0 !important;
+}
