@@ -1,6 +1,6 @@
 <div class="container">
-  <h1 class="title">Enviar correo</h1>
-  <div class="content__send">
+  <h1 class="title animate__animated animate__rollIn">Enviar correo</h1>
+  <div class="content__send title animate__animated animate__slideInRight ">
     <form [formGroup]="sendCorreo" autocomplete="off" (ngSubmit)="enviar()">
       <div class="destinatario">
         <mat-form-field appearance="outline">
@@ -50,8 +50,8 @@
       <div class="mensaje">
         <mat-form-field appearance="outline">
           <mat-label>Mensaje</mat-label>
-          <textarea formControlName="mensaje" matInput rows="8"></textarea>
-          <mat-error *ngIf="errorInput('mensaje')"
+          <textarea formControlName="msg" matInput rows="8"></textarea>
+          <mat-error *ngIf="errorInput('msg')"
             >El mensaje debe contener al menos 4 caracteres</mat-error
           >
         </mat-form-field>
@@ -62,3 +62,7 @@
     </form>
   </div>
 </div>
+
+<ng-template *ngIf="load">
+  <app-spinner></app-spinner>
+</ng-template>

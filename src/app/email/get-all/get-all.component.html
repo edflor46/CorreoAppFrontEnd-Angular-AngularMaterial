@@ -1,36 +1,63 @@
-<div class=" table-content">
+<ng-container *ngIf="correos.length > 0">
+  <div class="table-content">
     <h1 class="title">Correos enviados</h1>
-  <table class="table table-borderless">
-    <thead>
-      <tr>
-        <th scope="col">Destinatario</th>
-        <th scope="col">Asunto</th>
-        <th scope="col">Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        *ngFor="
-          let item of correos
-            | paginate
-              : {
-                  itemsPerPage: itemsPerPage,
-                  currentPage: p,
-                  totalItems: totalItems
-                }
-        "
-      >
-        <td>{{ item.destinatario }}</td>
-        <td>{{item.asunto}}</td>
-        <td>
-            <button (click)="goEmail(item._id)" mat-mini-fab color="primary"><i class="uil uil-eye"></i></button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th scope="col">Destinatario</th>
+          <th scope="col">Asunto</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let item of correos
+              | paginate
+                : {
+                    itemsPerPage: itemsPerPage,
+                    currentPage: p,
+                    totalItems: totalItems
+                  }
+          "
+        >
+          <td>{{ item.destinatario }}</td>
+          <td>{{ item.asunto }}</td>
+          <td>
+            <button (click)="goEmail(item._id)" mat-mini-fab color="primary">
+              <i class="uil uil-eye"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-  <pagination-controls
-    class="pagination"
-    (pageChange)="getPage((p = $event))"
-  ></pagination-controls>
-</div>
+    <pagination-controls
+      class="pagination"
+      (pageChange)="getPage((p = $event))"
+    ></pagination-controls>
+  </div>
+</ng-container>
+
+<ng-template *ngIf="loading">
+  <app-spinner></app-spinner>
+</ng-template>
+
+<ng-container *ngIf="!loading && correos.length === 0">
+  <div class="content__alert">
+    <mat-card
+      (click)="goSend()"
+      class="card__alert animate__animated animate__fadeInLeft"
+    >
+      <mat-card-content>
+        <div class="title__icon">
+          <i class="uil uil-exclamation-triangle"></i>
+        </div>
+        <p class="alert__description">
+          No hay correos enviados, se el primero en utilizar correos app da
+          click aqui.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</ng-container>

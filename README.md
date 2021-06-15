@@ -1,27 +1,59 @@
-# CorreoAppFront
+# Frontend Correos App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
+## Descripción
+Integración del frontend para realizar el envió de correos electrónicos mediante una interfaz gráfica utilizando una aplicación web, así mismo los correos enviados son guardados en una base de datos para posteriormente mostrar al usuario final los correos enviados.
 
-## Development server
+## Tecnologías utilizadas
+1. Angular 
+2. Angular Material
+3. Ngx Pagination
+4. Backend Correos App - https://github.com/edflor46/BackendCorreos-Node-Express-MongoDB
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Características
+1. Envió de correos
+2. Mostrar correos enviados
+3. Información detallada del correo seleccionado
+4. Validaciones con formularios reactivos
+5. Paginación de datos
 
-## Code scaffolding
+## Secciones
+1. Enviar mail
+2. Mail enviado
+3. Acerca de
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Capturas
 
-## Build
+### Inicio
+![img_1!](src/assets/demo/1.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Formulario de envió
+![img_1!](src/assets/demo/2.png)
 
-## Running unit tests
+### Validaciones
+![img_1!](src/assets/demo/3.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Formulario correcto
+![img_1!](src/assets/demo/4.png)
 
-## Running end-to-end tests
+### Notificación de correo enviado
+![img_1!](src/assets/demo/5.png)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Registro de envíos
+![img_1!](src/assets/demo/6.png)
 
-## Further help
+### Detalles del correo
+![img_1!](src/assets/demo/7.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Correo recibido en gmail
+![img_1!](src/assets/demo/8.png)
+
+### Acerca de la aplicación web
+![img_1!](src/assets/demo/9.png)
+
+### Sin registros de correos
+![img_1!](src/assets/demo/10.png)
+
+## Demo 
+https://mail-app-send.herokuapp.com/
+
+

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { DialogComponent } from '../dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 
@@ -13,7 +15,7 @@ export class NavComponent implements OnInit {
   
   options: FormGroup;
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder, public dialog: MatDialog) {
     this.options = fb.group({
       bottom: 0,
       fixed: true,
@@ -23,5 +25,11 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
   }
+/* -------------------------------------------------------------------------- */
+/*                                  GO ABOUT                                  */
+/* -------------------------------------------------------------------------- */
+goAbout() {
+  const dialog = this.dialog.open(DialogComponent);
+}
 
 }

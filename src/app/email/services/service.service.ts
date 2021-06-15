@@ -24,8 +24,16 @@ export class ServiceService {
   /* -------------------------------------------------------------------------- */
 
   getMail(id: string): Observable<Emails> {
-    return this.http.get<any>(`${environment.url}/${id}`).pipe(
-      map(resp => resp.correo)
-    )
+    return this.http
+      .get<any>(`${environment.url}/${id}`)
+      .pipe(map((resp) => resp.correo));
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*                                  SEND MAIL                                 */
+  /* -------------------------------------------------------------------------- */
+
+  sendMail(data) {
+    return this.http.post(`${environment.url}/`, data);
   }
 }

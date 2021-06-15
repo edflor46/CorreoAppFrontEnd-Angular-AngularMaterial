@@ -8,7 +8,7 @@
     >
       <mat-icon>menu</mat-icon>
     </button>
-    <span> Correos App </span>
+    <span class="title__nav"> Correos App </span>
     <span class="example-spacer"></span>
     <mat-icon> send</mat-icon>
   </mat-toolbar>
@@ -67,10 +67,10 @@
       <mat-list-item>
         <button
           mat-icon-button
-          routerLink="/emails"
           class="link"
           routerLinkActive="active"
           (click)="sidenav.toggle()"
+          (click)="goAbout()"
         >
         <i class="uil uil-info-circle icon__custom"></i>
           Acerca de

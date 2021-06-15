@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+/* -------------------------------------------------------------------------- */
+/*                                    FONT                                    */
+/* -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Lobster&display=swap');
+
+/* -------------------------------------------------------------------------- */
+/*                                  GENERALES                                 */
+/* -------------------------------------------------------------------------- */
 * {
   margin: 0;
 }
@@ -10,7 +18,7 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Courgette', cursive;
   overflow-y: hidden;
 }
 
@@ -21,13 +29,36 @@ p {
 .title {
   text-align: center;
   margin: 20px auto;
+  font-family: 'Lobster', cursive;
+  color: #835FFF
+}
+
+.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary {
+  background-color: #835FFF !important;
+  font-family: 'Courgette', cursive;
+}
+
+.mat-simple-snackbar-action{
+  color: #AA31FF;
 }
 
 /* -------------------------------------------------------------------------- */
 /*                                     NAV                                    */
 /* -------------------------------------------------------------------------- */
+.mat-toolbar.mat-primary {
+  background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+}
+
 .example-spacer {
   flex: 1 1 auto;
+}
+
+.title__nav {
+  font-family: 'Lobster', cursive;
+  font-size: 26px;
 }
 
 .icon__custom {
@@ -42,8 +73,11 @@ p {
 
 .link {
   color: rgb(155, 183, 245);
+  font-family: 'Courgette', cursive;
   transition: all .4s;
 }
+
+
 
 .link:hover {
   color: #FFF !important;
@@ -51,7 +85,7 @@ p {
 
 .sidenav {
   width: 200px;
-  background-color: #3F51B5
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -70,37 +104,52 @@ mat-sidenav-content {
 
 
 mat-card {
-  margin-top: 3rem;
-  margin-bottom: 1.6rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   padding: 4px !important;
   cursor: pointer;
-  background: rgba(241, 238, 238, 0.808) !important;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%) !important;
   text-align: center;
   transition: ease-in-out .4s !important;
+}
+
+.title__card {
+  font-family: 'Lobster', cursive;
+  color: #03b983;
+}
+
+.title__card-enviados {
+  font-family: 'Lobster', cursive;
+  color: #b92d03;
+}
+
+.title__card-about {
+  font-family: 'Lobster', cursive;
+  color: #3F51B5;
+}
+
+.card__description {
+  font-family: 'Courgette', cursive;
+  font-size: 14px;
+  color: #2e302f;
+}
+
+@media screen and (min-width: 550px) {
+  .card__description {
+    font-size: 18px;
+  }
 }
 
 mat-card:hover {
   box-shadow: 1px 1px 4px rgba(0, 38, 255, 0.425) !important;
 }
 
-.send {
-  border-left: 3px solid green;
-}
-
 .send i {
-  color: green;
-}
-
-.last {
-  border-left: 3px solid red;
+  color: #03b983;
 }
 
 .last i {
-  color: red;
-}
-
-.about {
-  border-left: 3px solid #3F51B5;
+  color: #b92d03;
 }
 
 .about i {
@@ -125,13 +174,119 @@ mat-card:hover {
   }
 }
 
-@media screen and (min-width:1024px){
-  .container{
+@media screen and (min-width:1024px) {
+  .container {
     width: 60%;
   }
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                    ALERT                                   */
+/* -------------------------------------------------------------------------- */
+.content__alert{
+  height: 100vh;
+  width: 90%;
+  margin: 0 auto;
+}
 
+.card__alert{
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%) !important;
+  position: relative;
+  top: 30%;
+
+}
+
+.title__icon{
+  margin-left: auto;
+  margin-right: auto;
+}
+.title__icon i{
+  font-size: 40px;
+  color: #665e16;
+}
+
+.alert__description{
+  font-family: 'Courgette', cursive;
+  font-size: 18px;
+  color: #505209;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                   DIALOG                                   */
+/* -------------------------------------------------------------------------- */
+.mat-dialog-container{
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+}
+
+.container__dialog{
+  width: 250px;
+}
+
+@media screen and (min-width:600px) {
+  .container__dialog{
+    width: 500px;
+  }
+}
+
+.content__dialog{
+  width: 100%;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+  text-align: center;
+ 
+}
+
+.dialog__description{
+  width: 100% !important;
+}
+
+.mat-dialog-title {
+  margin: 0 0 5px !important;
+  font-family: 'Lobster', cursive;
+}
+
+.item__dialog{
+  font-family: 'Courgette', cursive;
+}
+
+.mat-subheader{
+justify-content: center; 
+padding: 10px !important; 
+}
+
+.social__media{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.social__media a:nth-child(1){
+  color: #A536FF;
+}
+
+.social__media a:nth-child(2){
+ color: #6A7CFE;
+}
+
+.social__media a:nth-child(3){
+ color: #40AFFD;
+}
+
+
+.icon__dialog{
+  font-size: 30px;
+  margin: 5px;
+}
+
+.button__dialog{
+  margin-bottom: 30px !important;
+}
 /* -------------------------------------------------------------------------- */
 /*                                 PAGINATION                                 */
 /* -------------------------------------------------------------------------- */
@@ -143,7 +298,7 @@ mat-card:hover {
 }
 
 .ngx-pagination .current {
-  background-color: #3F51B5 !important;
+  background-color: #835FFF !important;
 }
 
 @media screen and (min-width:550px) {
@@ -151,9 +306,42 @@ mat-card:hover {
     left: 32%;
   }
 
-  .table-content{
+  .table-content {
     width: 80% !important;
   }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   SPINNER                                  */
+/* -------------------------------------------------------------------------- */
+.content__spinner {
+  height: 100vh !important;
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin: 0 auto !important;
+  background-color: #2f2f31e0;
+  position: fixed;
+}
+
+.spinner {
+  display: grid;
+  top: 37%;
+  margin: 0 auto;
+}
+
+.content__spinner h1 {
+  position: relative;
+  top: 38%;
+}
+
+.title__spinner {
+  color: #4D9FFD;
+}
+
+.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: #786DFE;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -171,8 +359,8 @@ mat-card:hover {
 /*                                    MAIL                                    */
 /* -------------------------------------------------------------------------- */
 
-.back i{
-  color: #3F51B5;
+.back i {
+  color: #835FFF;
   font-size: 30px;
   position: relative;
   top: 10px;
@@ -181,36 +369,35 @@ mat-card:hover {
   transition: ease-in-out .4s;
 }
 
-.back i:hover{
+.back i:hover {
   transform: scale(1, 1);
   color: #c4c8e4;
 }
 
-.content__mail{
+.content__mail {
   height: 100vh;
 }
 
-@media screen and (min-width:450px){
-  .content__mail{
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
+@media screen and (min-width:450px) {
+  .content__mail {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
-.mensaje{
+.mensaje {
   margin-top: 15px;
 }
 
-.mensaje strong{
+.mensaje strong {
   font-size: 20px;
 }
 
-.footer__mail{
+.footer__mail {
   text-align: center;
   position: relative;
   bottom: -300px;
- 
   color: rgb(124, 124, 124);
 }
 
@@ -218,16 +405,20 @@ mat-card:hover {
 /*                                    SEND                                    */
 /* -------------------------------------------------------------------------- */
 
-.content__send{
+.content__send {
   height: 100vh;
   text-align: center;
   display: block;
 }
 
-.mat-form-field-infix{
+.mat-form-field-infix {
   width: 300px !important;
 }
 
 .mat-form-field-appearance-outline .mat-form-field-wrapper {
   margin: 0em 0 !important;
+}
+
+.mat-form-field-infix{
+  font-family: 'Courgette', cursive;
 }

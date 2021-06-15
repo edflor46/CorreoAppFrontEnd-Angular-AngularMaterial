@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ServiceService } from '../services/service.service';
 import { PatternService } from '../services/pattern.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-send',
@@ -9,19 +11,26 @@ import { PatternService } from '../services/pattern.service';
   styles: [],
 })
 export class SendComponent implements OnInit {
+  /*=========LOAD==========*/
+  load:boolean = false;
+  /*==========RES==========*/
+  resp:any;
+
   /*==========FORM GROUP===========*/
   sendCorreo: FormGroup;
   constructor(
     private fb: FormBuilder,
     private correoService: ServiceService,
-    private pattern: PatternService
+    private pattern: PatternService,
+    private _snackBar: MatSnackBar,
+    private router:Router
   ) {
     /*==========VALIDACIONES==========*/
     this.sendCorreo = this.fb.group({
       destinatario : [''.trim(), [Validators.required, Validators.pattern(this.pattern.destinatario)]],
       asunto       : [''.trim(), [Validators.required, Validators.minLength(4), Validators.pattern(this.pattern.asunto)]],
       nombre       : [''.trim(), [Validators.required, Validators.minLength(4), Validators.pattern(this.pattern.nombre)]],
-      mensaje      : [''.trim(), [Validators.required, Validators.minLength(4)]],
+      msg          : [''.trim(), [Validators.required, Validators.minLength(4)]],
     });
   }
 
@@ -40,6 +49,15 @@ export class SendComponent implements OnInit {
   /*                                 SEND CORREO                                */
   /* -------------------------------------------------------------------------- */
   enviar() {
-    console.log('Enviado');
+    const data =  this.sendCorreo.value;
+    this.correoService.sendMail(data).subscribe(resp => {
+      this.load = true;
+      this._snackBar.open('Mensaje enviado exitosamente', 'Cerrar', {
+        duration: 3000
+      });
+      
+      this.router.navigateByUrl('./home');
+    })
+    
   }
 }

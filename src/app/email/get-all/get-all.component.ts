@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
   styles: [],
 })
 export class GetAllComponent implements OnInit {
+  
+  loading:boolean = false;
+
   /*==========BACKEND==========*/
   correos     : Correo[] = [];
   paginator   : Paginator;
@@ -22,13 +25,14 @@ export class GetAllComponent implements OnInit {
   constructor(private sv: ServiceService, private router:Router) {}
   
   ngOnInit(): void {
-    
+      this.loading = true;
     /*==========GET MAILS==========*/
     this.sv.getMails(1).subscribe(resp => {
-      this.correos = resp.correos;
+      this.correos = resp.correos.reverse();
       this.itemsPerPage = resp.paginator.perPage;
       this.totalItems = resp.paginator.total;
       this.p = resp.paginator.currentPage;
+      this.loading = false;
     })
     
   }
@@ -38,7 +42,8 @@ export class GetAllComponent implements OnInit {
  /* -------------------------------------------------------------------------- */
   getPage(page:number){
     this.sv.getMails(page).subscribe(mails => {
-      this.correos = mails.correos;
+      this.correos = mails.correos.reverse();
+      this.loading = false;
     });
 
   }
@@ -46,9 +51,15 @@ export class GetAllComponent implements OnInit {
   /* -------------------------------------------------------------------------- */
   /*                                  GO EMAIL                                  */
   /* -------------------------------------------------------------------------- */
-
   goEmail(id:string){
     this.router.navigate(['./email', id]);
+  }
+  
+  /* -------------------------------------------------------------------------- */
+  /*                                   GO SEND                                  */
+  /* -------------------------------------------------------------------------- */
+  goSend(){
+    this.router.navigate(['./send']);
   }
 
 

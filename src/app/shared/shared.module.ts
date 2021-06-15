@@ -2,21 +2,31 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavComponent } from './nav/nav.component';
 import { MaterialModule } from '../material/material.module';
-import { AppRoutingModule } from '../app-routing.module';
+
+import { SpinnerComponent } from './spinner/spinner.component';
+import { RouterModule } from '@angular/router';
+import { DialogComponent } from './dialog/dialog.component';
+
 
 
 
 @NgModule({
   declarations: [
-    NavComponent
+    NavComponent,
+    SpinnerComponent,
+    DialogComponent,
+  
   ],
   imports: [
     CommonModule,
     MaterialModule,
-    AppRoutingModule
+    RouterModule
   ], 
   exports: [
-    NavComponent
+    NavComponent,
+    SpinnerComponent,
+    DialogComponent
+   
   ]
 })
 export class SharedModule { }
